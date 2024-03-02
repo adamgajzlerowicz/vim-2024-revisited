@@ -1,4 +1,10 @@
-require('adam.lazy')
+require('adam.packages')
 require('adam.startify')
-Require('adam.settings')
-Require('adam.mappings')
+require('adam.settings')
+require('adam.mappings')
+require('adam.rosepine')
+require('adam.telescope')
+require('adam.mason')
+require('adam.lspconfig')
+
+
