@@ -17,7 +17,7 @@ vim.api.nvim_set_keymap('n', '<S-Tab>', ':NvimTreeToggle<CR>', {noremap = true, 
 vim.api.nvim_set_keymap('n', '<leader>d', ':lua vim.diagnostic.open_float()<CR>', {noremap = true, silent = true, nowait = true})
 vim.api.nvim_set_keymap('n', '<leader>l', '<cmd>lua FormatAndSave()<CR>', {noremap = true, silent = true, nowait = true})
 vim.api.nvim_set_keymap('n', '<tab>', ':Telescope buffers<CR>', {noremap = true, nowait = true})
-vim.api.nvim_set_keymap('n', '<leader>fe', ':Telescope live_grep<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>fw', ':Telescope live_grep<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>o', ':Startify<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>jj', ':TZAtaraxis<CR>', {noremap = true})
 vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { desc = "copy to system clipboard", nowait = true })
@@ -29,3 +29,16 @@ vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>lua package.loaded.gitsigns.blam
 vim.api.nvim_set_keymap('n', '<leader>fs', "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", {noremap = true, silent = true, nowait = true})
 vim.api.nvim_set_keymap('n', '<Esc>', '<cmd>noh | cclose<CR>', {noremap = true, silent = true, nowait = true})
 vim.api.nvim_set_keymap("n", "<tab>", [[<cmd>lua require('telescope').extensions.recent_files.pick()<CR>]], {noremap = true, silent = true})
+
+-- lsp
+vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'gs', '<cmd>Telescope lsp_document_symbols<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'gS', '<cmd>Telescope lsp_workspace_symbols<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '[g', '<cmd>lua vim.diagnostic.goto_prev()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', ']g', '<cmd>lua vim.diagnostic.goto_next()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true, silent = true})
+

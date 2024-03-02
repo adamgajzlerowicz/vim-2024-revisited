@@ -6,5 +6,6 @@ require('adam.rosepine')
 require('adam.telescope')
 require('adam.mason')
 require('adam.lspconfig')
+require('adam.formatter')
 
 

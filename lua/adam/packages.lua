@@ -78,6 +78,9 @@ require("lazy").setup({
 
   {
     "nvim-tree/nvim-tree.lua",
+    config = function()
+      require("nvim-tree").setup {}
+    end,
   },
   
   {
@@ -89,6 +92,10 @@ require("lazy").setup({
     config = function()
       require("gitsigns").setup()
     end,
+  },
+
+  { 
+    'mhartington/formatter.nvim',
   }
 })
 
