@@ -1,101 +1,124 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  { "rose-pine/neovim", name = "rose-pine" },
+	{ "rose-pine/neovim", name = "rose-pine" },
 
-  "mhinz/vim-startify", 
+	"mhinz/vim-startify",
 
-  {"nvim-telescope/telescope.nvim"},
+	{ "nvim-telescope/telescope.nvim" },
 
-  {"smartpde/telescope-recent-files"},
+	{ "smartpde/telescope-recent-files" },
 
-  "github/copilot.vim",
+	"github/copilot.vim",
 
-  "nvim-lua/plenary.nvim",
+	"nvim-lua/plenary.nvim",
 
-  {
-    "Pocco81/TrueZen.nvim",
-    lazy = false,
-    cmd = { "TZAtaraxis", "TZMinimalist" },
-    config = function()
-      require("true-zen").setup {
-        modes = {
-          ataraxis = {
-            shade = "dark",
-            backdrop = 0.20,
-            minimum_writing_area = {
-              width = 90,
-              height = 44,
-            },
-            quit_untoggles = true,
-            padding = {
-              left = 30,
-              right = 30,
-              top = 1,
-              bottom = 1,
-            },
-          },
-        },
-      }
-    end,
-  },
+	{
+		"Pocco81/TrueZen.nvim",
+		lazy = false,
+		cmd = { "TZAtaraxis", "TZMinimalist" },
+		config = function()
+			require("true-zen").setup({
+				modes = {
+					ataraxis = {
+						shade = "dark",
+						backdrop = 0.20,
+						minimum_writing_area = {
+							width = 90,
+							height = 44,
+						},
+						quit_untoggles = true,
+						padding = {
+							left = 30,
+							right = 30,
+							top = 1,
+							bottom = 1,
+						},
+					},
+				},
+			})
+		end,
+	},
 
-  {
-    "max397574/better-escape.nvim",
-    config = function()
-      require("better_escape").setup()
-    end,
-  },
+	{
+		"max397574/better-escape.nvim",
+		config = function()
+			require("better_escape").setup()
+		end,
+	},
 
-  {
-    "williamboman/mason.nvim"
-  },
+	{
+		"williamboman/mason.nvim",
+	},
 
-  {
-    "williamboman/mason-lspconfig.nvim"
-  },
-  
-  {
-    "neovim/nvim-lspconfig"
-  },
+	{
+		"williamboman/mason-lspconfig.nvim",
+	},
 
-  {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  },
+	{
+		"neovim/nvim-lspconfig",
+	},
 
-  {
-    "nvim-tree/nvim-tree.lua",
-    config = function()
-      require("nvim-tree").setup {}
-    end,
-  },
-  
-  {
-    "nvim-tree/nvim-web-devicons"  
-  },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate",
+	},
 
-  {
-    "lewis6991/gitsigns.nvim",
-    config = function()
-      require("gitsigns").setup()
-    end,
-  },
+	{
+		"nvim-tree/nvim-tree.lua",
+		config = function()
+			require("nvim-tree").setup({})
+		end,
+	},
 
-  { 
-    'mhartington/formatter.nvim',
-  }
+	{
+		"nvim-tree/nvim-web-devicons",
+	},
+
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup()
+		end,
+	},
+
+	{
+		"mhartington/formatter.nvim",
+	},
+
+	{
+		"L3MON4D3/LuaSnip",
+		run = "make install_jsregexp",
+		config = function()
+			require("luasnip").config.set_config({
+				history = true,
+				updateevents = "TextChanged,TextChangedI",
+			})
+		end,
+	},
+
+	{
+		"saadparwaiz1/cmp_luasnip",
+	},
+
+	{
+		"hrsh7th/nvim-cmp",
+	},
+
+	{
+		"hrsh7th/cmp-nvim-lsp",
+	},
 })
-
