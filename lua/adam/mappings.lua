@@ -21,7 +21,7 @@ function Git_auto_push()
 	vim.cmd("!git add --all")
 	vim.cmd("!git commit -m " .. branchName)
 
-	vim.cmd("!git push")
+	-- vim.cmd("!git push")
 end
 
 vim.g.mapleader = " "
