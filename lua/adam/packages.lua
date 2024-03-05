@@ -84,6 +84,11 @@ require("lazy").setup({
 				view = {
 					width = 70,
 				},
+				actions = {
+					open_file = {
+						quit_on_open = true,
+					},
+				},
 			})
 		end,
 	},
