@@ -1,13 +1,12 @@
 function ToggleOrFindNvimTree()
-  local bufnr = vim.api.nvim_get_current_buf()
-  local api = require('nvim-tree.api')
+	local bufnr = vim.api.nvim_get_current_buf()
+	local api = require("nvim-tree.api")
 
-  if api.tree.is_tree_buf(bufnr) then
-    vim.cmd('NvimTreeClose')
-  else
-    vim.cmd('NvimTreeFindFile')
-  end
-
+	if api.tree.is_tree_buf(bufnr) then
+		vim.cmd("NvimTreeClose")
+	else
+		vim.cmd("NvimTreeFindFile")
+	end
 end
 
 function FormatAndSave()

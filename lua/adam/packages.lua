@@ -80,7 +80,11 @@ require("lazy").setup({
 	{
 		"nvim-tree/nvim-tree.lua",
 		config = function()
-			require("nvim-tree").setup({})
+			require("nvim-tree").setup({
+				view = {
+					width = 70,
+				},
+			})
 		end,
 	},
 
@@ -102,12 +106,12 @@ require("lazy").setup({
 	{
 		"L3MON4D3/LuaSnip",
 		run = "make install_jsregexp",
-    lazy = false,
+		lazy = false,
 	},
 
 	{
 		"saadparwaiz1/cmp_luasnip",
-    lazy = false,
+		lazy = false,
 	},
 
 	{
