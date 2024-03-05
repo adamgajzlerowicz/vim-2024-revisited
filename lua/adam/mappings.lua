@@ -16,8 +16,11 @@ end
 
 function Git_auto_push()
 	vim.cmd("wa")
+	local branchName = vim.fn.system("git rev-parse --abbrev-ref HEAD"):gsub("\n", "")
+
 	vim.cmd("!git add --all")
-	vim.cmd("!git commit -m 'Your commit message'")
+	vim.cmd("!git commit -m " .. branchName)
+
 	vim.cmd("!git push")
 end
 
