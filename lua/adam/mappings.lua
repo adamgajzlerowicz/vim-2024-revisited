@@ -15,13 +15,12 @@ function FormatAndSave()
 end
 
 function Git_auto_push()
-	vim.cmd("wa")
 	local branchName = vim.fn.system("git rev-parse --abbrev-ref HEAD"):gsub("\n", "")
 
+	vim.cmd("wa")
 	vim.cmd("!git add --all")
 	vim.cmd("!git commit -m " .. branchName)
-
-	-- vim.cmd("!git push")
+	vim.cmd("!git push")
 end
 
 vim.g.mapleader = " "
@@ -48,7 +47,7 @@ vim.api.nvim_set_keymap("v", "<leader>y", '"+y', { desc = "copy to system clipbo
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>p",
-	"<cmd>lua Git_auto_push()<CR>",
+	"<cmd>lua Git_auto_push()<CR><cr>",
 	{ noremap = true, silent = true, nowait = true }
 )
 vim.api.nvim_set_keymap(
