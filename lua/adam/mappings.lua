@@ -1,3 +1,15 @@
+function CustomLspRename()
+	local opts = {
+		prompt = "New Name: ", -- The prompt text
+	}
+
+	vim.ui.input(opts, function(input)
+		if input then
+			vim.lsp.buf.rename(input)
+		end
+	end)
+end
+
 function ToggleOrFindNvimTree()
 	local bufnr = vim.api.nvim_get_current_buf()
 	local api = require("nvim-tree.api")
@@ -59,7 +71,7 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>e",
-	"<cmd>lua vim.lsp.buf.rename()<CR>",
+	":lua CustomLspRename()<CR>",
 	{ noremap = true, silent = true, nowait = true }
 )
 vim.api.nvim_set_keymap(
