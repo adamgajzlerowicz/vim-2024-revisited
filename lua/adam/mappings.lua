@@ -112,3 +112,23 @@ vim.api.nvim_set_keymap("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>",
 vim.api.nvim_set_keymap("n", "[g", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "]g", "<cmd>lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
+
+-- harpoon
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>ha",
+	"<cmd>lua require('harpoon.mark').add_file()<CR>",
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>hh",
+	":Telescope harpoon marks<CR>",
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>hl",
+  "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>",
+  { noremap = true, silent = true }
+)

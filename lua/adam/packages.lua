@@ -27,6 +27,16 @@ require("lazy").setup({
 	"nvim-lua/plenary.nvim",
 
 	{
+		"ThePrimeagen/harpoon",
+		lazy = false,
+		config = function()
+			require("harpoon").setup({
+				mark_branch = true,
+			})
+		end,
+	},
+
+	{
 		"Pocco81/TrueZen.nvim",
 		lazy = false,
 		cmd = { "TZAtaraxis", "TZMinimalist" },
