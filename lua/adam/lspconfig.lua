@@ -1,6 +1,6 @@
 local lspconfig = require("lspconfig")
 
-local servers = { "html", "astro", "tailwindcss", "jsonls", "eslint" }
+local servers = { "html", "astro", "tailwindcss", "jsonls", "eslint", "gopls" }
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({})

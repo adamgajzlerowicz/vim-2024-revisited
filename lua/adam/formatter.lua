@@ -2,18 +2,30 @@ local filetypes = {
 	"css",
 	"eruby",
 	"html",
-	"javascript",
-	"javascriptreact",
 	"less",
 	"sass",
 	"scss",
 	"svelte",
 	"pug",
-	"typescriptreact",
-	"typescript",
 	"vue",
 	"astro",
 }
+
+local eslint_d = function()
+	return {
+		exe = "eslint_d", -- Using eslint_d instead of eslint
+		args = { "--stdin", "--stdin-filename", vim.api.nvim_buf_get_name(0), "--fix-to-stdout" },
+		stdin = true,
+	}
+end
+
+local prettier = function()
+	return {
+		exe = "prettier",
+		args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0) },
+		stdin = true,
+	}
+end
 
 local formatterConfig = {
 	lua = {
@@ -22,6 +34,10 @@ local formatterConfig = {
 	["*"] = {
 		require("formatter.filetypes.any").remove_trailing_whitespace,
 	},
+	javascriptreact = { eslint_d, prettier },
+	javascript = { eslint_d, prettier },
+	typescript = { eslint_d, prettier },
+	typescriptreact = { eslint_d, prettier },
 }
 
 for _, filetype in ipairs(filetypes) do
