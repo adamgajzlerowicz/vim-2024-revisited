@@ -116,13 +116,13 @@ vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap 
 -- harpoon
 vim.api.nvim_set_keymap(
 	"n",
-	"<leader>ha",
+	"<leader>fa",
 	"<cmd>lua require('harpoon.mark').add_file()<CR>",
 	{ noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap(
 	"n",
-	"<leader>hh",
+	"<leader>ff",
 	":Telescope harpoon marks<CR>",
 	{ noremap = true, silent = true }
 )
