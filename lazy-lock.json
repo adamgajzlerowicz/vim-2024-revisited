@@ -20,5 +20,6 @@
   "rose-pine": { "branch": "main", "commit": "f977eeba34b030b37f93ece2fbd792477606203b" },
   "telescope-recent-files": { "branch": "main", "commit": "6893cda11625254cc7dc2ea76e0a100c7deeb028" },
   "telescope.nvim": { "branch": "master", "commit": "aa83606299c5beeaf80e656efbf07bde258db7be" },
+  "vim-lsp": { "branch": "master", "commit": "f7ccf006df1aefd327c0e2c55cc8632a2db577c1" },
   "vim-startify": { "branch": "master", "commit": "4e089dffdad46f3f5593f34362d530e8fe823dcf" }
 }
