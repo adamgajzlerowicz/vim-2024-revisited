@@ -136,4 +136,8 @@ require("lazy").setup({
 	{
 		"hrsh7th/cmp-nvim-lsp",
 	},
+
+	{
+		"gpanders/editorconfig.nvim",
+	},
 })

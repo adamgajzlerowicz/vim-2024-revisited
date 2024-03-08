@@ -112,6 +112,9 @@ vim.api.nvim_set_keymap("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>",
 vim.api.nvim_set_keymap("n", "[g", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "]g", "<cmd>lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>d', vim.diagnostic.open_float, {noremap = true, silent = true, desc = 'LSP Diagnostics'})
+vim.keymap.set('n', '<Leader>q', vim.diagnostic.setqflist, {noremap = true, silent = true, desc = 'LSP Diagnostics Quickfix'})
+
 
 -- harpoon
 vim.api.nvim_set_keymap(

@@ -27,6 +27,8 @@ vim.cmd([[
   set background=dark
 ]])
 
+
+
 vim.opt.autoread = true
 vim.cmd([[au CursorHold * checktime]])
 vim.cmd([[highlight CursorLine cterm=NONE ctermbg=DarkGrey guibg=#3A3C4E]])
@@ -39,3 +41,34 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+vim.api.nvim_create_augroup("CenterScreenOnEnter", { clear = true })
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = "*",
+    command = "normal zz",
+    group = "CenterScreenOnEnter"
+})
+
+-- Function to check and jump to the last cursor position in a file
+local function set_last_position()
+  vim.api.nvim_create_autocmd("BufReadPost", {
+    pattern = "*",
+    callback = function()
+      local last_pos = vim.api.nvim_buf_get_mark(0, '"')
+      local last_line = last_pos[1]
+      local last_col = last_pos[2]
+      if last_line > 0 and last_line <= vim.api.nvim_buf_line_count(0) then
+        vim.api.nvim_win_set_cursor(0, {last_line, last_col})
+      end
+    end,
+  })
+end
+
+-- Call the function to set up the autocommand
+set_last_position()
+
+vim.cmd [[
+  augroup DiagnosticsHighlight
+    autocmd!
+    autocmd ColorScheme * highlight DiagnosticUnderlineError gui=underline guifg=NONE guisp=Red ctermfg=NONE cterm=underline
+  augroup END
+]]

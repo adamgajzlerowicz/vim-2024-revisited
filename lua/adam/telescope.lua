@@ -1,11 +1,27 @@
 require("telescope").setup({
 	defaults = {
+		mappings = {
+			i = {
+				-- When an item is selected in insert mode
+				["<CR>"] = function(bufnr)
+					require("telescope.actions").select_default(bufnr)
+					vim.cmd("normal! zz") -- Center the screen after selection
+				end,
+			},
+			n = {
+				-- When an item is selected in normal mode
+				["<CR>"] = function(bufnr)
+					require("telescope.actions").select_default(bufnr)
+					vim.cmd("normal! zz") -- Center the screen after selection
+				end,
+			},
+		},
 		layout_strategy = "vertical",
 		layout_config = {
 			width = 0.9,
 			height = 0.9,
 		},
-		path_display = "shorten",
+		path_display = { "shorten" },
 	},
 	pickers = {
 		git_files = {
