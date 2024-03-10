@@ -143,9 +143,24 @@ require("lazy").setup({
 
 	{
 		"numToStr/Comment.nvim",
-		opts = {
-			-- add any options here
-		},
+		opts = {},
 		lazy = false,
+	},
+
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("lualine").setup({
+				sections = {
+					lualine_a = {},
+					lualine_b = { "branch" },
+					lualine_c = { { "filename", path = 1 } },
+					lualine_x = { "diagnostics" },
+					lualine_y = { "progress" },
+					lualine_z = { "location" },
+				},
+			})
+		end,
 	},
 })
