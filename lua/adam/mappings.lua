@@ -124,14 +124,14 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap(
-	"n",
-	"<leader>ff",
-	":Telescope harpoon marks<CR>",
-	{ noremap = true, silent = true }
+  "n",
+  "<leader>ff",
+  "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>",
+  { noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>hl",
-  "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>",
+  "<leader>kc",
+  "<cmd>Gitsigns preview_hunk<CR>",
   { noremap = true, silent = true }
 )
