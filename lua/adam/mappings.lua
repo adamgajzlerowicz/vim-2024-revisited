@@ -141,10 +141,24 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap("n", "<leader>kc", "<cmd>Gitsigns preview_hunk<CR>", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<Leader>dt", function()
+vim.keymap.set("n", "<Leader>db", function()
 	require("dap").toggle_breakpoint()
 end)
 
-vim.keymap.set("n", "<Leader>dc", function()
+vim.keymap.set("n", "<Leader>dr", function()
 	require("dap").continue()
+end)
+
+vim.keymap.set("n", "<leader>dus", function()
+  local widgets = require("dap.ui.widgets")
+  local sidebar  = widgets.sidebar(widgets.scopes)
+  sidebar.open()
+end)
+
+vim.keymap.set("n", "<leader>dgt", function()
+  require("dap-go").debug_test()
+end)
+
+vim.keymap.set("n", "<leader>dgl", function()
+  require("dap-go").debug_last()
 end)
