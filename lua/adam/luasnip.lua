@@ -11,18 +11,17 @@ local consoleLog = snippet("cl", {
 })
 
 local className = snippet("c", {
-	text_node("className=\""),
+	text_node('className="'),
 	insert_node(1, ""),
-	text_node("\""),
+	text_node('"'),
 })
 
-
 local reactComponent = snippet("cc", {
-    text_node({"type Props = {", "\t"}),
-    text_node({"", "}", "\t"}),
-    text_node({"", "function Component({}: Props) {", "\t"}),
-    insert_node(1, "return"),
-    text_node({"", "\treturn (", "\t\t<div>", "\t\t</div>", "\t);", "}"})
+	text_node({ "type Props = {", "\t" }),
+	text_node({ "", "}", "\t" }),
+	text_node({ "", "export default function Component({}: Props) {", "\t" }),
+	insert_node(1, "return"),
+	text_node({ "", "\treturn (", "\t\t<div>", "\t\t</div>", "\t);", "}" }),
 })
 
 luasnip.add_snippets("javascript", { consoleLog, reactComponent, className })
