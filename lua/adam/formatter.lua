@@ -38,6 +38,23 @@ local formatterConfig = {
 	javascript = { eslint_d, prettier },
 	typescript = { eslint_d, prettier },
 	typescriptreact = { eslint_d, prettier },
+	go = {
+		-- First, run goimports
+		function()
+			return {
+				exe = "goimports",
+				args = {},
+				stdin = true,
+			}
+		end,
+		function()
+			return {
+				exe = "gofmt",
+				args = {},
+				stdin = true,
+			}
+		end,
+	},
 }
 
 for _, filetype in ipairs(filetypes) do
