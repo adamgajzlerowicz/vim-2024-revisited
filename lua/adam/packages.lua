@@ -170,8 +170,8 @@ require("lazy").setup({
 		config = function()
 			local dap, dapui = require("dap"), require("dapui")
 
-      require("dap-go").setup()
-      require("dapui").setup()
+			require("dap-go").setup()
+			require("dapui").setup()
 
 			dap.listeners.before.attach.dapui_config = function()
 				dapui.open()
@@ -185,6 +185,17 @@ require("lazy").setup({
 			dap.listeners.before.event_exited.dapui_config = function()
 				dapui.close()
 			end
+		end,
+	},
+
+	{
+		"olexsmir/gopher.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"vim-treesitter/nvim-treesitter",
+		},
+		config = function()
+			require("gopher").setup()
 		end,
 	},
 })
