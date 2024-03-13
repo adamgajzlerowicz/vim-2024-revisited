@@ -198,4 +198,24 @@ require("lazy").setup({
 			require("gopher").setup()
 		end,
 	},
+
+	{
+		"sainnhe/gruvbox-material",
+	},
+
+	{
+		"rebelot/kanagawa.nvim",
+	},
+
+	{
+		"sainnhe/everforest",
+	},
+
+	{
+		"catppuccin/nvim",
+	},
+
+	{
+		"AlexvZyl/nordic.nvim",
+	},
 })
