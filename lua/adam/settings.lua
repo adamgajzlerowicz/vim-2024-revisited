@@ -72,5 +72,6 @@ vim.cmd([[
 ]])
 
 vim.cmd([[
-  colorscheme nordic
+  let g:everforest_background = 'hard'
+  colorscheme everforest
 ]])
