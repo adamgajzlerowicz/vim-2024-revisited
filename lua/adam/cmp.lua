@@ -9,7 +9,7 @@ cmp.setup({
 	window = {
 		documentation = cmp.config.window.bordered(),
 		completion = cmp.config.window.bordered({
-			winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+			winhighlight = "Normal:MyCmpHighlight,CursorLine:PmenuSel,Search:None",
 		}),
 	},
 	mapping = cmp.mapping.preset.insert({
