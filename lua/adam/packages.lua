@@ -190,10 +190,6 @@ require("lazy").setup({
 
 	{
 		"olexsmir/gopher.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"vim-treesitter/nvim-treesitter",
-		},
 		config = function()
 			require("gopher").setup()
 		end,
