@@ -214,4 +214,8 @@ require("lazy").setup({
 	{
 		"AlexvZyl/nordic.nvim",
 	},
+
+	{
+		"tpope/vim-fugitive",
+	},
 })
