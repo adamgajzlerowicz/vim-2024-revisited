@@ -162,3 +162,9 @@ end)
 vim.keymap.set("n", "<leader>dgl", function()
   require("dap-go").debug_last()
 end)
+vim.api.nvim_set_keymap(
+	"n",
+	"f",
+	"<cmd>HopChar1<CR>",
+	{ noremap = true, silent = true, nowait = true }
+)
