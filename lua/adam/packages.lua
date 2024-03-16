@@ -222,4 +222,8 @@ require("lazy").setup({
 	{
 		"virchau13/tree-sitter-astro",
 	},
+
+  {
+    "smoka7/hop.nvim",
+  }
 })
