@@ -218,4 +218,8 @@ require("lazy").setup({
 	{
 		"AlexvZyl/nordic.nvim",
 	},
+
+	{
+		"wuelnerdotexe/vim-astro",
+	},
 })
