@@ -8,6 +8,7 @@ local filetypes = {
 	"svelte",
 	"pug",
 	"vue",
+	"astro",
 }
 
 local eslint_d = function()
@@ -37,7 +38,6 @@ local formatterConfig = {
 	javascript = { eslint_d, prettier },
 	typescript = { eslint_d, prettier },
 	typescriptreact = { eslint_d, prettier },
-	astro = { prettier },
 	go = {
 		-- First, run goimports
 		function()

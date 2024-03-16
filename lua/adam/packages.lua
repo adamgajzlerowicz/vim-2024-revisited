@@ -22,9 +22,9 @@ require("lazy").setup({
 
 	{ "smartpde/telescope-recent-files" },
 
-	"github/copilot.vim",
+	{ "github/copilot.vim" },
 
-	"nvim-lua/plenary.nvim",
+	{ "nvim-lua/plenary.nvim" },
 
 	{
 		"ThePrimeagen/harpoon",
@@ -190,10 +190,6 @@ require("lazy").setup({
 
 	{
 		"olexsmir/gopher.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"vim-treesitter/nvim-treesitter",
-		},
 		config = function()
 			require("gopher").setup()
 		end,
@@ -221,5 +217,9 @@ require("lazy").setup({
 
 	{
 		"wuelnerdotexe/vim-astro",
+	},
+
+	{
+		"virchau13/tree-sitter-astro",
 	},
 })
