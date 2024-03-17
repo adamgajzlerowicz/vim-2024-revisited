@@ -150,21 +150,17 @@ vim.keymap.set("n", "<Leader>dr", function()
 end)
 
 vim.keymap.set("n", "<leader>dus", function()
-  local widgets = require("dap.ui.widgets")
-  local sidebar  = widgets.sidebar(widgets.scopes)
-  sidebar.open()
+	local widgets = require("dap.ui.widgets")
+	local sidebar = widgets.sidebar(widgets.scopes)
+	sidebar.open()
 end)
 
 vim.keymap.set("n", "<leader>dgt", function()
-  require("dap-go").debug_test()
+	require("dap-go").debug_test()
 end)
 
 vim.keymap.set("n", "<leader>dgl", function()
-  require("dap-go").debug_last()
+	require("dap-go").debug_last()
 end)
-vim.api.nvim_set_keymap(
-	"n",
-	"f",
-	"<cmd>HopChar1<CR>",
-	{ noremap = true, silent = true, nowait = true }
-)
+vim.api.nvim_set_keymap("n", "f", "<cmd>HopChar1<CR>", { noremap = true, silent = true, nowait = true })
+vim.api.nvim_set_keymap("n", "<leader>kg", "<cmd>.GBrowse<CR>", { noremap = true, silent = true, nowait = true })

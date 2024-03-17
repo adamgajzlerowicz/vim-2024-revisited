@@ -216,7 +216,6 @@ require("lazy").setup({
 	},
 
 	{
-<<<<<<< HEAD
 		"wuelnerdotexe/vim-astro",
 	},
 
@@ -228,8 +227,11 @@ require("lazy").setup({
 		"smoka7/hop.nvim",
 		version = "*",
 		opts = {},
-=======
-		"tpope/vim-fugitive",
->>>>>>> c7a6b9fda61a74ede3be7d854c401dcb2d85c45c
 	},
+	{
+		"tpope/vim-fugitive",
+	},
+  {
+    "tpope/vim-rhubarb",
+  },
 })
