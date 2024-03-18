@@ -75,3 +75,18 @@ vim.cmd([[
   let g:everforest_background = 'hard'
   colorscheme everforest
 ]])
+
+vim.diagnostic.config({
+  underline = true,
+  virtual_text = true,
+  signs = true,
+  severity_sort = true,
+})
+
+vim.api.nvim_create_user_command(
+  'GoGenerate',
+  function()
+    vim.cmd('!go generate %')
+  end,
+  {}
+)
