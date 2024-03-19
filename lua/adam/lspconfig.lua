@@ -32,11 +32,15 @@ require("lspconfig").gopls.setup({
 	settings = {
 		gopls = {
 			completeUnimported = true,
-      usePlaceholders = true,
+			usePlaceholders = true,
 			analyses = {
 				unusedparams = true,
 			},
 			staticcheck = true,
 		},
 	},
+})
+
+require("lspconfig").golangci_lint_ls.setup({
+	filetypes = { "go" },
 })
