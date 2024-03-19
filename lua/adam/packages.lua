@@ -234,5 +234,8 @@ require("lazy").setup({
   {
     "tpope/vim-rhubarb",
   },
-  { "nvim-neotest/nvim-nio" }
+
+  {
+    "nvim-neotest/nvim-nio",
+  },
 })
