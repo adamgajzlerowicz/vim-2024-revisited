@@ -93,6 +93,7 @@ require("lazy").setup({
 			require("nvim-tree").setup({
 				view = {
 					width = 70,
+					centralize_selection = true,
 				},
 				actions = {
 					open_file = {
@@ -231,11 +232,11 @@ require("lazy").setup({
 	{
 		"tpope/vim-fugitive",
 	},
-  {
-    "tpope/vim-rhubarb",
-  },
+	{
+		"tpope/vim-rhubarb",
+	},
 
-  {
-    "nvim-neotest/nvim-nio",
-  },
+	{
+		"nvim-neotest/nvim-nio",
+	},
 })
