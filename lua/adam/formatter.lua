@@ -32,6 +32,7 @@ local prettier = function()
 		stdin = true,
 	}
 end
+
 local prettier = function()
 	local filepath_original = vim.api.nvim_buf_get_name(0)
 	local filepath = filepath_original:gsub("%[", "\\["):gsub("%]", "\\]")
