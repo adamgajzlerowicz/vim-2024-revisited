@@ -13,6 +13,7 @@ local filetypes = {
 local eslint_d = function()
 	local filename = vim.api.nvim_buf_get_name(0)
 	filename = filename:gsub("%[", "\\["):gsub("%]", "\\]")
+
 	return {
 		exe = "eslint_d",
 		try_node_modules = true,
@@ -24,21 +25,6 @@ end
 local prettier = function()
 	local filepath_original = vim.api.nvim_buf_get_name(0)
 	local filepath = filepath_original:gsub("%[", "\\["):gsub("%]", "\\]")
-
-	return {
-		exe = "prettier",
-		try_node_modules = true,
-		args = { "--stdin-filepath", filepath },
-		stdin = true,
-	}
-end
-
-local prettier = function()
-	local filepath_original = vim.api.nvim_buf_get_name(0)
-	local filepath = filepath_original:gsub("%[", "\\["):gsub("%]", "\\]")
-
-	local filedir = vim.fn.fnamemodify(filepath_original, ":p:h")
-	vim.fn.chdir(filedir)
 
 	return {
 		exe = "prettier",
@@ -61,7 +47,6 @@ local formatterConfig = {
 	typescriptreact = { eslint_d, prettier },
 	astro = { prettier },
 	go = {
-		-- First, run goimports
 		function()
 			return {
 				exe = "goimports",
