@@ -25,6 +25,17 @@ local prettier = function()
 	local filepath_original = vim.api.nvim_buf_get_name(0)
 	local filepath = filepath_original:gsub("%[", "\\["):gsub("%]", "\\]")
 
+	return {
+		exe = "prettier",
+		try_node_modules = true,
+		args = { "--stdin-filepath", filepath },
+		stdin = true,
+	}
+end
+local prettier = function()
+	local filepath_original = vim.api.nvim_buf_get_name(0)
+	local filepath = filepath_original:gsub("%[", "\\["):gsub("%]", "\\]")
+
 	local filedir = vim.fn.fnamemodify(filepath_original, ":p:h")
 	vim.fn.chdir(filedir)
 
@@ -34,29 +45,6 @@ local prettier = function()
 		args = { "--stdin-filepath", filepath },
 		stdin = true,
 	}
-end
-
-local prettier_two = function()
-    local filepath = vim.api.nvim_buf_get_name(0)
-    local escaped_filepath = filepath:gsub("%[", "\\["):gsub("%]", "\\]")
-
-    -- Get the directory of the current file
-    local filedir = vim.fn.fnamemodify(escaped_filepath, ":p:h")
-
-    -- Save the current working directory
-    local cwd = vim.fn.getcwd()
-
-    -- Change the directory locally to the current window
-    vim.api.nvim_exec("lcd " .. filedir, false)
-
-    -- Your prettier command setup here
-    local cmd = string.format([[prettier --write "%s"]], escaped_filepath)
-
-    -- Execute the prettier command
-    vim.fn.system(cmd)
-
-    -- Restore the original working directory
-    vim.api.nvim_exec("lcd " .. cwd, false)
 end
 
 local formatterConfig = {
