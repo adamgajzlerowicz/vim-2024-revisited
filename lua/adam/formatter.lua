@@ -49,11 +49,12 @@ local formatterConfig = {
 	go = {
 		function()
 			return {
-				exe = "goimports",
-				args = {},
-				stdin = true,
+				exe = "~/gci-format",
+				args = { vim.api.nvim_buf_get_name(0) },
+				stdin = false,
 			}
 		end,
+
 		function()
 			return {
 				exe = "gofmt",
