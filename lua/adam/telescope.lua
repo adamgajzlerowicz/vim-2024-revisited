@@ -1,6 +1,20 @@
 require("telescope").setup({
 	defaults = {
-		file_ignore_patterns = { "%.git/", "node_modules/" },
+		file_ignore_patterns = {
+			"%.git/",
+			"node_modules/",
+			".yarn/",
+			"yarn",
+			"github",
+			"lerna.json",
+			"nx.json",
+			"README.md",
+			".gitignore",
+			".firebaserc",
+			".editorconfig",
+      "firebase.json",
+      ".prettierrc",
+		},
 		preview = false,
 		mappings = {
 			i = {
