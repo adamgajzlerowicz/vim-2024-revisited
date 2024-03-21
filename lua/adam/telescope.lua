@@ -1,5 +1,7 @@
 require("telescope").setup({
 	defaults = {
+		file_ignore_patterns = { "%.git/", "node_modules/" },
+		preview = false,
 		mappings = {
 			i = {
 				-- When an item is selected in insert mode
@@ -27,10 +29,10 @@ require("telescope").setup({
 		git_files = {
 			show_untracked = true,
 		},
-    buffers = {
-      sort_lastused = true,
-      ignore_current_buffer = true,
-    },
+		buffers = {
+			sort_lastused = true,
+			ignore_current_buffer = true,
+		},
 	},
 	extensions = {
 		recent_files = {
