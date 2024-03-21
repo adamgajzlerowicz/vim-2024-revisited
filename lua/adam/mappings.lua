@@ -10,16 +10,6 @@ function CustomLspRename()
 	end)
 end
 
-function ToggleOrFindNvimTree()
-	local bufnr = vim.api.nvim_get_current_buf()
-	local api = require("nvim-tree.api")
-
-	if api.tree.is_tree_buf(bufnr) then
-		vim.cmd("NvimTreeClose")
-	else
-		vim.cmd("NvimTreeFindFile")
-	end
-end
 
 function FormatAndSave()
 	vim.api.nvim_exec("silent FormatWrite", false)
@@ -38,7 +28,7 @@ end
 vim.g.mapleader = " "
 vim.api.nvim_set_keymap("n", ";", ":", { noremap = true, silent = true, nowait = true })
 vim.api.nvim_set_keymap("n", "<c-p>", ":Telescope git_files<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<S-Tab>", ":lua ToggleOrFindNvimTree()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-Tab>", ":NnnPicker<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>d",

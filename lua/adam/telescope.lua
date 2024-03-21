@@ -27,6 +27,10 @@ require("telescope").setup({
 		git_files = {
 			show_untracked = true,
 		},
+    buffers = {
+      sort_lastused = true,
+      ignore_current_buffer = true,
+    },
 	},
 	extensions = {
 		recent_files = {

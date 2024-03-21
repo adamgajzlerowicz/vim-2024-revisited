@@ -88,27 +88,6 @@ require("lazy").setup({
 	},
 
 	{
-		"nvim-tree/nvim-tree.lua",
-		config = function()
-			require("nvim-tree").setup({
-				view = {
-					width = 70,
-					centralize_selection = true,
-				},
-				actions = {
-					open_file = {
-						quit_on_open = true,
-					},
-				},
-			})
-		end,
-	},
-
-	{
-		"nvim-tree/nvim-web-devicons",
-	},
-
-	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup()
@@ -223,4 +202,9 @@ require("lazy").setup({
 	{
 		"nvim-neotest/nvim-nio",
 	},
+
+  {
+  "luukvbaal/nnn.nvim",
+    config = function() require("nnn").setup() end
+  },
 })
