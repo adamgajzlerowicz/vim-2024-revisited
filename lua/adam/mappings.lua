@@ -10,7 +10,6 @@ function CustomLspRename()
 	end)
 end
 
-
 function FormatAndSave()
 	vim.api.nvim_exec("silent FormatWrite", false)
 	vim.api.nvim_command("silent wall")
@@ -89,8 +88,6 @@ vim.api.nvim_set_keymap(
 	[[<cmd>lua require('telescope').extensions.recent_files.pick()<CR>]],
 	{ noremap = true, silent = true }
 )
-vim.api.nvim_set_keymap("n", "<C-h>", "<Cmd>wincmd h<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-l>", "<Cmd>wincmd l<CR>", { noremap = true, silent = true })
 
 -- lsp
 vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
