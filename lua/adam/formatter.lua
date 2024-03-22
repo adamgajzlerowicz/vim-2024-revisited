@@ -47,13 +47,13 @@ local formatterConfig = {
 	typescriptreact = { eslint_d, prettier },
 	astro = { prettier },
 	go = {
-		function()
-			return {
-				exe = "~/gci-format",
-				args = { vim.api.nvim_buf_get_name(0) },
-				stdin = false,
-			}
-		end,
+		-- function()
+		-- 	return {
+		-- 		exe = "~/gci-format",
+		-- 		args = { vim.api.nvim_buf_get_name(0) },
+		-- 		stdin = false,
+		-- 	}
+		-- end,
 
 		function()
 			return {
