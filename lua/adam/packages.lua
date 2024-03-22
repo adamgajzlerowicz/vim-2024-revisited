@@ -125,6 +125,9 @@ require("lazy").setup({
 		"numToStr/Comment.nvim",
 		opts = {},
 		lazy = false,
+		config = function()
+			require("Comment").setup()
+		end,
 	},
 
 	{
@@ -226,5 +229,26 @@ require("lazy").setup({
 			{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
 			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
 		},
+	},
+
+	{
+		"nvimdev/lspsaga.nvim",
+		config = function()
+			require("lspsaga").setup({
+				lightbulb = {
+					enable = false,
+				},
+			})
+		end,
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+		},
+	},
+
+	{
+		"robitx/gp.nvim",
+		config = function()
+			require("gp").setup()
+		end,
 	},
 })
