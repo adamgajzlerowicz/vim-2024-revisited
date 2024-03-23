@@ -90,15 +90,14 @@ vim.api.nvim_set_keymap(
 )
 
 -- lsp
--- vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "gd", "<cmd>:Lspsaga goto_definition<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "gs", "<cmd>Telescope lsp_document_symbols<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "gS", "<cmd>Telescope lsp_workspace_symbols<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+--  vim.api.nvim_set_keymap("n", "gd", "<cmd>:Lspsaga goto_definition<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gS", "<cmd>Telescope lsp_document_symbols<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gs", "<cmd>Telescope lsp_workspace_symbols<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "gn", "<cmd>lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "gd", "<cmd>:Lspsaga show_buf_diagnostics<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gn", "<cmd>lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader><cr>",

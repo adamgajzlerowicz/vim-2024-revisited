@@ -73,22 +73,18 @@ vim.cmd([[
 
 vim.cmd([[
   let g:everforest_background = 'hard'
-  colorscheme everforest
+  colorscheme kanagawa
 ]])
 
 vim.diagnostic.config({
-  underline = true,
-  virtual_text = true,
-  signs = true,
-  severity_sort = true,
+	underline = true,
+	virtual_text = true,
+	signs = true,
+	severity_sort = true,
 })
 
-vim.api.nvim_create_user_command(
-  'GoGenerate',
-  function()
-    vim.cmd('!go generate %')
-  end,
-  {}
-)
+vim.api.nvim_create_user_command("GoGenerate", function()
+	vim.cmd("!go generate %")
+end, {})
 
-vim.opt.mouse = ''
+vim.opt.mouse = ""

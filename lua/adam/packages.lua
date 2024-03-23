@@ -22,7 +22,7 @@ require("lazy").setup({
 
 	{ "smartpde/telescope-recent-files" },
 
-	{ "github/copilot.vim" },
+	-- { "github/copilot.vim" },
 
 	{ "nvim-lua/plenary.nvim" },
 
@@ -238,6 +238,9 @@ require("lazy").setup({
 				lightbulb = {
 					enable = false,
 				},
+				symbol_in_winbar = {
+					enable = false,
+				},
 			})
 		end,
 		dependencies = {
@@ -250,5 +253,10 @@ require("lazy").setup({
 		config = function()
 			require("gp").setup()
 		end,
+	},
+
+	{
+		"Exafunction/codeium.vim",
+		event = "BufEnter",
 	},
 })
