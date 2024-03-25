@@ -232,31 +232,15 @@ require("lazy").setup({
 	},
 
 	{
-		"nvimdev/lspsaga.nvim",
-		config = function()
-			require("lspsaga").setup({
-				lightbulb = {
-					enable = false,
-				},
-				symbol_in_winbar = {
-					enable = false,
-				},
-			})
-		end,
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-		},
-	},
-
-	{
-		"robitx/gp.nvim",
-		config = function()
-			require("gp").setup()
-		end,
-	},
-
-	{
 		"Exafunction/codeium.vim",
 		event = "BufEnter",
 	},
+
+  {
+    "junegunn/fzf.vim",
+  },
+  
+  {
+    "junegunn/fzf",
+  },
 })

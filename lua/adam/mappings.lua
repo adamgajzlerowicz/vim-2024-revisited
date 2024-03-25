@@ -26,7 +26,7 @@ end
 
 vim.g.mapleader = " "
 vim.api.nvim_set_keymap("n", ";", ":", { noremap = true, silent = true, nowait = true })
-vim.api.nvim_set_keymap("n", "<c-p>", ":Telescope git_files<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<c-p>", ":GFiles<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":NnnPicker %:p:h<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap(
 	"n",
@@ -40,8 +40,8 @@ vim.api.nvim_set_keymap(
 	"<cmd>lua FormatAndSave()<CR>",
 	{ noremap = true, silent = true, nowait = true }
 )
-vim.api.nvim_set_keymap("n", "<tab>", ":Telescope buffers<CR>", { noremap = true, nowait = true })
-vim.api.nvim_set_keymap("n", "<leader>fw", ":Telescope live_grep<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<tab>", ":Buffers<CR>", { noremap = true, nowait = true })
+vim.api.nvim_set_keymap("n", "<leader>fw", ":RG<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>o", ":Startify<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>jj", ":TZAtaraxis<CR>", { noremap = true })
 vim.api.nvim_set_keymap("v", "<leader>y", '"+y', { desc = "copy to system clipboard", nowait = true })
@@ -61,12 +61,6 @@ vim.api.nvim_set_keymap(
 	"n",
 	"<leader>e",
 	":lua CustomLspRename()<CR>",
-	{ noremap = true, silent = true, nowait = true }
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>k",
-	"<cmd>Telescope git_status<CR>",
 	{ noremap = true, silent = true, nowait = true }
 )
 vim.api.nvim_set_keymap(
@@ -91,7 +85,6 @@ vim.api.nvim_set_keymap(
 
 -- lsp
 vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
---  vim.api.nvim_set_keymap("n", "gd", "<cmd>:Lspsaga goto_definition<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gS", "<cmd>Telescope lsp_document_symbols<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gs", "<cmd>Telescope lsp_workspace_symbols<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
