@@ -249,13 +249,6 @@ require("lazy").setup({
 	},
 
 	{
-		"robitx/gp.nvim",
-		config = function()
-			require("gp").setup()
-		end,
-	},
-
-	{
 		"Exafunction/codeium.vim",
 		event = "BufEnter",
 	},
