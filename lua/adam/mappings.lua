@@ -27,7 +27,7 @@ end
 vim.g.mapleader = " "
 vim.api.nvim_set_keymap("n", ";", ":", { noremap = true, silent = true, nowait = true })
 vim.api.nvim_set_keymap("n", "<c-p>", ":GFiles<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<S-Tab>", ":NnnPicker %:p:h<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-Tab>", ":Fern . -reveal=%<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>d",
