@@ -121,11 +121,11 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap("n", "<leader>kc", "<cmd>Gitsigns preview_hunk<CR>", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>gb", function()
+vim.keymap.set("n", "tb", function()
 	require("dap").toggle_breakpoint()
 end)
 
-vim.keymap.set("n", "<leader>gc", function()
+vim.keymap.set("n", "tc", function()
 	require("dap").continue()
 end)
 
@@ -135,7 +135,7 @@ vim.keymap.set("n", "<leader>gu", function()
 	sidebar.toggle()
 end)
 
-vim.keymap.set("n", "<leader>gt", function()
+vim.keymap.set("n", "td", function()
 	require("dap-go").debug_test()
 end)
 
@@ -148,3 +148,17 @@ vim.api.nvim_set_keymap("n", "y", "yy", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>y", '"+yy', { nowait = true })
 vim.api.nvim_set_keymap("x", "<Leader>c", "<Plug>Commentary", {})
 vim.api.nvim_set_keymap("c", "<C-f>", "<Nop>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>fh", "<Plug>(fern-action-hidden:toggle)", { noremap = true })
+
+local function debug_nearest()
+	vim.g["test#go#runner"] = "delve"
+	vim.cmd("TestNearest")
+	vim.g["test#go#runner"] = nil
+end
+
+vim.api.nvim_set_keymap("n", "<leader>td", "<cmd>lua debug_nearest()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>tt", ":TestNearest<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>tT", ":TestFile<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>ta", ":TestSuite<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>tl", ":TestLast<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>tg", ":TestVisit<CR>", { silent = true })

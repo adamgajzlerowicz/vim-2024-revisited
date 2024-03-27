@@ -87,4 +87,4 @@ vim.api.nvim_create_user_command("GoGenerate", function()
 	vim.cmd("!go generate %")
 end, {})
 
-vim.opt.mouse = ""
+-- vim.opt.mouse = ""
