@@ -1,17 +1,5 @@
 local cmp = require("cmp")
 
-local function luasnip_filter(entry)
-	local source = entry.source.name
-	if source == "luasnip" then
-		local current_input = vim.api.nvim_get_current_line()
-		local snip_text = entry:get_completion_item().label
-		if not snip_text:find(current_input, 1, true) then
-			return false
-		end
-	end
-	return true
-end
-
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -31,7 +19,8 @@ cmp.setup({
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 	}),
 	sources = cmp.config.sources({
-		{ name = "luasnip", keyword_length = 2, filter = luasnip_filter },
+		{ name = "luasnip", option = { use_show_condition = false } },
+
 		{ name = "buffer" },
 		{ name = "nvim_lsp" },
 	}, {}),
