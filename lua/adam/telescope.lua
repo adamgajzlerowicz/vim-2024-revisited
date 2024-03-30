@@ -55,7 +55,6 @@ require("telescope").setup({
 	},
 })
 
-require("telescope").load_extension("harpoon")
 require("telescope").load_extension("recent_files")
 
 local lsp_symbols_excluding_types = require("adam.telescope-customer-picker")

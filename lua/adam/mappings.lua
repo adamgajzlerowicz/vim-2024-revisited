@@ -69,12 +69,6 @@ vim.api.nvim_set_keymap(
 	"<cmd>lua package.loaded.gitsigns.blame_line()<CR>",
 	{ noremap = true, silent = true, nowait = true }
 )
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>fs",
-	"<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
-	{ noremap = true, silent = true, nowait = true }
-)
 vim.api.nvim_set_keymap("n", "<Esc>", "<cmd>noh | cclose<CR>", { noremap = true, silent = true, nowait = true })
 vim.api.nvim_set_keymap(
 	"n",
@@ -85,8 +79,8 @@ vim.api.nvim_set_keymap(
 
 -- lsp
 vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "gS", "<cmd>Telescope lsp_document_symbols<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "gs", "<cmd>Telescope lsp_workspace_symbols<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "fs", "<cmd>Telescope lsp_document_symbols<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "fS", "<cmd>Telescope lsp_workspace_symbols<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { noremap = true, silent = true })
@@ -105,30 +99,13 @@ vim.keymap.set(
 	vim.diagnostic.setqflist,
 	{ noremap = true, silent = true, desc = "LSP Diagnostics Quickfix" }
 )
-
--- harpoon
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>fa",
-	"<cmd>lua require('harpoon.mark').add_file()<CR>",
-	{ noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>ff",
-	"<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>",
-	{ noremap = true, silent = true }
-)
 vim.api.nvim_set_keymap("n", "<leader>kc", "<cmd>Gitsigns preview_hunk<CR>", { noremap = true, silent = true })
-
 vim.keymap.set("n", "tb", function()
 	require("dap").toggle_breakpoint()
 end)
-
 vim.keymap.set("n", "tc", function()
 	require("dap").continue()
 end)
-
 vim.keymap.set("n", "<leader>gu", function()
 	local widgets = require("dap.ui.widgets")
 	local sidebar = widgets.sidebar(widgets.scopes)
