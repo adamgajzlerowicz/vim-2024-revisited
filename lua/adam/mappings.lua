@@ -70,13 +70,13 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true, nowait = true }
 )
 vim.api.nvim_set_keymap("n", "<Esc>", "<cmd>noh | cclose<CR>", { noremap = true, silent = true, nowait = true })
-vim.api.nvim_set_keymap(
-	"n",
-	"<tab>",
-	[[<cmd>lua require('telescope').extensions.recent_files.pick()<CR>]],
-	{ noremap = true, silent = true }
-)
-
+-- vim.api.nvim_set_keymap(
+-- 	"n",
+-- 	"<tab>",
+-- 	[[<cmd>lua require('telescope').extensions.recent_files.pick()<CR>]],
+-- 	{ noremap = true, silent = true }
+-- )
+--
 -- lsp
 vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "fs", "<cmd>Telescope lsp_document_symbols<CR>", { noremap = true, silent = true })
