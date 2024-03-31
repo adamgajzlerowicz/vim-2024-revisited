@@ -79,10 +79,6 @@ require("lazy").setup({
 	},
 
 	{
-		"mhartington/formatter.nvim",
-	},
-
-	{
 		"L3MON4D3/LuaSnip",
 		run = "make install_jsregexp",
 		lazy = false,
@@ -267,6 +263,36 @@ require("lazy").setup({
 						vertical = "down:75%",
 					},
 				},
+			})
+		end,
+	},
+
+	{
+		"stevearc/conform.nvim",
+		lazy = false,
+		config = function()
+			require("conform").setup({
+				formatters_by_ft = {
+					lua = { "stylua" },
+					javascript = { { "prettierd", "prettier", "eslint_d" } },
+					typescript = { { "prettierd", "prettier", "eslint_d" } },
+					typescriptreact = { { "prettierd", "prettier", "eslint_d" } },
+					javascriptreact = { { "prettierd", "prettier", "eslint_d" } },
+					astro = { { "prettierd", "prettier", "eslint_d" } },
+					go = { "goimports", "gofmt", "gci-format" },
+				},
+
+				format_on_save = {
+					timeout_ms = 500,
+					lsp_fallback = true,
+				},
+			})
+
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				pattern = "*",
+				callback = function(args)
+					require("conform").format({ bufnr = args.buf })
+				end,
 			})
 		end,
 	},
