@@ -11,8 +11,8 @@ function CustomLspRename()
 end
 
 function FormatAndSave()
-  vim.api.nvim_exec("silent FormatWrite", false)
   vim.api.nvim_command("silent wall")
+  vim.api.nvim_exec("silent FormatWrite", false)
 end
 
 function Git_auto_push()
@@ -56,12 +56,14 @@ vim.api.nvim_set_keymap(
   "<cmd>lua Git_auto_push()<CR><cr>",
   { noremap = true, silent = true, nowait = true }
 )
+
 vim.api.nvim_set_keymap(
   "n",
   "<leader>u",
   "<cmd>FzfLua lsp_references<CR>",
   { noremap = true, silent = true, nowait = true }
 )
+
 vim.api.nvim_set_keymap(
   "n",
   "<leader>e",
