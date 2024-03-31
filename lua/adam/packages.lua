@@ -252,6 +252,14 @@ require("lazy").setup({
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
 			require("fzf-lua").setup({
+				"borderless_full",
+				previewers = {
+					builtin = {
+						extensions = {
+							images = { "img", "png", "jpg", "jpeg", "gif", "bmp", "tiff" },
+						},
+					},
+				},
 				winopts = {
 					fullscreen = true,
 					preview = {

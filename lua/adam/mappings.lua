@@ -40,8 +40,8 @@ vim.api.nvim_set_keymap(
 	"<cmd>lua FormatAndSave()<CR>",
 	{ noremap = true, silent = true, nowait = true }
 )
-vim.api.nvim_set_keymap("n", "<tab>", ":FzfLua buffers<CR>", { noremap = true, nowait = true })
-vim.api.nvim_set_keymap("n", "<leader>fw", ":RG<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<tab>", ":FzfLua buffers preview=false<CR>", { noremap = true, nowait = true })
+vim.api.nvim_set_keymap("n", "<leader>fw", ":FzfLua grep<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>o", ":Startify<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>jj", ":TZAtaraxis<CR>", { noremap = true })
 vim.api.nvim_set_keymap("v", "<leader>y", '"+y', { desc = "copy to system clipboard", nowait = true })
