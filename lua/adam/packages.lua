@@ -227,14 +227,6 @@ require("lazy").setup({
 	},
 
 	{
-		"junegunn/fzf.vim",
-	},
-
-	{
-		"junegunn/fzf",
-	},
-
-	{
 		"lambdalisue/fern.vim",
 	},
 
@@ -266,13 +258,14 @@ require("lazy").setup({
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
 			require("fzf-lua").setup({
-        winopts = {
-          preview = {
-            layout = "vertical",
-            vertical = "up:75%",
-          },
-        },
-      })
+				winopts = {
+					fullscreen = true,
+					preview = {
+						layout = "vertical",
+						vertical = "down:75%",
+					},
+				},
+			})
 		end,
 	},
 })
