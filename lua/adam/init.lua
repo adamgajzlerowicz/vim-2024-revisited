@@ -3,7 +3,7 @@ require("adam.startify")
 require("adam.mappings")
 require("adam.mason")
 require("adam.lspconfig")
-
+require("adam.formatter")
 require("adam.luasnip")
 require("adam.dap")
 require("adam.cmp")

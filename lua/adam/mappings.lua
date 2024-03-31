@@ -11,8 +11,7 @@ function CustomLspRename()
 end
 
 function FormatAndSave()
-	-- vim.api.nvim_exec("silent FormatWrite", false)
-
+	vim.api.nvim_exec("silent FormatWrite", false)
 	vim.api.nvim_command("silent wall")
 end
 
@@ -112,7 +111,7 @@ end)
 vim.keymap.set("n", "<leader>gl", function()
 	require("dap-go").debug_last()
 end)
-vim.api.nvim_set_keymap("n", "f", "<cmd>HopChar1<CR>", { noremap = true, silent = true, nowait = true })
+vim.api.nvim_set_keymap("n", "f", "<cmd>HopChar2<CR>", { noremap = true, silent = true, nowait = true })
 vim.api.nvim_set_keymap("n", "<leader>kg", "<cmd>.GBrowse<CR>", { noremap = true, silent = true, nowait = true })
 vim.api.nvim_set_keymap("n", "y", "yy", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>y", '"+yy', { nowait = true })
