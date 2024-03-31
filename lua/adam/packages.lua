@@ -6,7 +6,7 @@ if not vim.loop.fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
+		"--branch=stable",
 		lazypath,
 	})
 end
@@ -17,12 +17,6 @@ require("lazy").setup({
 	{ "rose-pine/neovim", name = "rose-pine" },
 
 	"mhinz/vim-startify",
-
-	{ "nvim-telescope/telescope.nvim" },
-
-	{ "smartpde/telescope-recent-files" },
-
-	-- { "github/copilot.vim" },
 
 	{ "nvim-lua/plenary.nvim" },
 
