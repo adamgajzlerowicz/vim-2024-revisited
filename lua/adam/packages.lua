@@ -1,304 +1,297 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable",
+		lazypath,
+	})
 end
 
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  { "rose-pine/neovim",     name = "rose-pine" },
+	{ "rose-pine/neovim", name = "rose-pine" },
 
-  "mhinz/vim-startify",
+	"mhinz/vim-startify",
 
-  { "nvim-lua/plenary.nvim" },
+	{ "nvim-lua/plenary.nvim" },
 
-  {
-    "Pocco81/TrueZen.nvim",
-    lazy = false,
-    cmd = { "TZAtaraxis", "TZMinimalist" },
-    config = function()
-      require("true-zen").setup({
-        modes = {
-          ataraxis = {
-            shade = "dark",
-            backdrop = 0.20,
-            minimum_writing_area = {
-              width = 90,
-              height = 44,
-            },
-            quit_untoggles = true,
-            padding = {
-              left = 30,
-              right = 30,
-              top = 1,
-              bottom = 1,
-            },
-          },
-        },
-      })
-    end,
-  },
+	{
+		"Pocco81/TrueZen.nvim",
+		lazy = false,
+		cmd = { "TZAtaraxis", "TZMinimalist" },
+		config = function()
+			require("true-zen").setup({
+				modes = {
+					ataraxis = {
+						shade = "dark",
+						backdrop = 0.20,
+						minimum_writing_area = {
+							width = 90,
+							height = 44,
+						},
+						quit_untoggles = true,
+						padding = {
+							left = 30,
+							right = 30,
+							top = 1,
+							bottom = 1,
+						},
+					},
+				},
+			})
+		end,
+	},
 
-  {
-    "max397574/better-escape.nvim",
-    config = function()
-      require("better_escape").setup()
-    end,
-  },
+	{
+		"max397574/better-escape.nvim",
+		config = function()
+			require("better_escape").setup()
+		end,
+	},
 
-  {
-    "williamboman/mason.nvim",
-  },
+	{
+		"williamboman/mason.nvim",
+	},
 
-  {
-    "williamboman/mason-lspconfig.nvim",
-  },
+	{
+		"williamboman/mason-lspconfig.nvim",
+	},
 
-  {
-    "neovim/nvim-lspconfig",
-  },
+	{
+		"neovim/nvim-lspconfig",
+	},
 
-  {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate",
+	},
 
-  {
-    "lewis6991/gitsigns.nvim",
-    config = function()
-      require("gitsigns").setup()
-    end,
-  },
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup()
+		end,
+	},
 
-  {
-    "L3MON4D3/LuaSnip",
-    run = "make install_jsregexp",
-    lazy = false,
-  },
+	{
+		"L3MON4D3/LuaSnip",
+		run = "make install_jsregexp",
+		lazy = false,
+	},
 
-  {
-    "saadparwaiz1/cmp_luasnip",
-    lazy = false,
-  },
+	{
+		"saadparwaiz1/cmp_luasnip",
+		lazy = false,
+	},
 
-  {
-    "hrsh7th/nvim-cmp",
-  },
+	{
+		"hrsh7th/nvim-cmp",
+	},
 
-  {
-    "hrsh7th/cmp-nvim-lsp",
-  },
+	{
+		"hrsh7th/cmp-nvim-lsp",
+	},
 
-  {
-    "gpanders/editorconfig.nvim",
-  },
+	{
+		"gpanders/editorconfig.nvim",
+	},
 
-  {
-    "numToStr/Comment.nvim",
-    opts = {},
-    lazy = false,
-    config = function()
-      require("Comment").setup()
-    end,
-  },
+	{
+		"numToStr/Comment.nvim",
+		opts = {},
+		lazy = false,
+		config = function()
+			require("Comment").setup()
+		end,
+	},
 
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("lualine").setup({
-        sections = {
-          lualine_a = {},
-          lualine_b = { "branch" },
-          lualine_c = { { "filename", path = 1 } },
-          lualine_x = { "diagnostics" },
-          lualine_y = { "progress" },
-          lualine_z = { "location" },
-        },
-      })
-    end,
-  },
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("lualine").setup({
+				sections = {
+					lualine_a = {},
+					lualine_b = { "branch" },
+					lualine_c = { { "filename", path = 1 } },
+					lualine_x = { "diagnostics" },
+					lualine_y = { "progress" },
+					lualine_z = { "location" },
+				},
+			})
+		end,
+	},
 
-  {
-    "mfussenegger/nvim-dap",
-    dependencies = { "leoluz/nvim-dap-go" },
-    config = function()
-      require("dap-go").setup()
-    end,
-  },
+	{
+		"mfussenegger/nvim-dap",
+		dependencies = { "leoluz/nvim-dap-go" },
+		config = function()
+			require("dap-go").setup()
+		end,
+	},
 
-  {
-    "olexsmir/gopher.nvim",
-    config = function()
-      require("gopher").setup()
-    end,
-  },
+	{
+		"olexsmir/gopher.nvim",
+		config = function()
+			require("gopher").setup()
+		end,
+	},
 
-  {
-    "sainnhe/gruvbox-material",
-  },
+	{
+		"sainnhe/gruvbox-material",
+	},
 
-  {
-    "rebelot/kanagawa.nvim",
-  },
+	{
+		"rebelot/kanagawa.nvim",
+	},
 
-  {
-    "sainnhe/everforest",
-  },
+	{
+		"sainnhe/everforest",
+	},
 
-  {
-    "catppuccin/nvim",
-  },
+	{
+		"catppuccin/nvim",
+	},
 
-  {
-    "AlexvZyl/nordic.nvim",
-  },
+	{
+		"AlexvZyl/nordic.nvim",
+	},
 
-  {
-    "wuelnerdotexe/vim-astro",
-  },
+	{
+		"wuelnerdotexe/vim-astro",
+	},
 
-  {
-    "virchau13/tree-sitter-astro",
-  },
+	{
+		"virchau13/tree-sitter-astro",
+	},
 
-  {
-    "mhartington/formatter.nvim",
-  },
+	{
+		"mhartington/formatter.nvim",
+	},
 
-  {
-    "takac/vim-hardtime",
-    config = function()
-      vim.g.hardtime_default_on = 1
-    end,
-  },
+	{
+		"smoka7/hop.nvim",
+		version = "*",
+		opts = {},
+	},
+	{
+		"tpope/vim-fugitive",
+	},
+	{
+		"tpope/vim-rhubarb",
+	},
 
-  {
-    "smoka7/hop.nvim",
-    version = "*",
-    opts = {},
-  },
-  {
-    "tpope/vim-fugitive",
-  },
-  {
-    "tpope/vim-rhubarb",
-  },
+	{
+		"nvim-neotest/nvim-nio",
+	},
 
-  {
-    "nvim-neotest/nvim-nio",
-  },
+	{
+		"luukvbaal/nnn.nvim",
+		config = function()
+			require("nnn").setup()
+		end,
+	},
 
-  {
-    "luukvbaal/nnn.nvim",
-    config = function()
-      require("nnn").setup()
-    end,
-  },
+	{
+		"christoomey/vim-tmux-navigator",
+		cmd = {
+			"TmuxNavigateLeft",
+			"TmuxNavigateDown",
+			"TmuxNavigateUp",
+			"TmuxNavigateRight",
+			"TmuxNavigatePrevious",
+		},
+		keys = {
+			{ "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+			{ "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+			{ "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+			{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+		},
+	},
 
-  {
-    "christoomey/vim-tmux-navigator",
-    cmd = {
-      "TmuxNavigateLeft",
-      "TmuxNavigateDown",
-      "TmuxNavigateUp",
-      "TmuxNavigateRight",
-      "TmuxNavigatePrevious",
-    },
-    keys = {
-      { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
-      { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
-      { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
-      { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
-      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-    },
-  },
+	{
+		"Exafunction/codeium.vim",
+		event = "BufEnter",
+	},
 
-  {
-    "Exafunction/codeium.vim",
-    event = "BufEnter",
-  },
+	{
+		"lambdalisue/fern.vim",
+	},
 
-  {
-    "lambdalisue/fern.vim",
-  },
+	{
+		"vim-test/vim-test",
+		config = function()
+			vim.g["test#strategy"] = "vimux"
+			vim.g["test#go#runner"] = "delve"
+		end,
+	},
 
-  {
-    "vim-test/vim-test",
-    config = function()
-      vim.g["test#strategy"] = "vimux"
-      vim.g["test#go#runner"] = "delve"
-    end,
-  },
+	{
+		"preservim/vimux",
+	},
 
-  {
-    "preservim/vimux",
-  },
+	{
+		"windwp/nvim-ts-autotag",
+		setup = function()
+			require("nvim-ts-autotag").setup()
+		end,
+	},
+	{
+		"onsails/lspkind.nvim",
+	},
 
-  {
-    "windwp/nvim-ts-autotag",
-    setup = function()
-      require("nvim-ts-autotag").setup()
-    end,
-  },
-  {
-    "onsails/lspkind.nvim",
-  },
+	{
+		"ibhagwan/fzf-lua",
+		-- optional for icon support
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("fzf-lua").setup({
+				"borderless_full",
+				previewers = {
+					builtin = {
+						extensions = {
+							images = { "img", "png", "jpg", "jpeg", "gif", "bmp", "tiff" },
+						},
+					},
+				},
+				winopts = {
+					fullscreen = true,
+					preview = {
+						layout = "vertical",
+						vertical = "down:75%",
+					},
+				},
+			})
+		end,
+	},
 
-  {
-    "ibhagwan/fzf-lua",
-    -- optional for icon support
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("fzf-lua").setup({
-        "borderless_full",
-        previewers = {
-          builtin = {
-            extensions = {
-              images = { "img", "png", "jpg", "jpeg", "gif", "bmp", "tiff" },
-            },
-          },
-        },
-        winopts = {
-          fullscreen = true,
-          preview = {
-            layout = "vertical",
-            vertical = "down:75%",
-          },
-        },
-      })
-    end,
-  },
-
-  -- {
-  --   "stevearc/conform.nvim",
-  --   lazy = false,
-  --   config = function()
-  --     require("conform").setup({
-  --       formatters_by_ft = {
-  --         go = { "goimports", "gofmt", "gci-format" },
-  --       },
-  --
-  --       format_on_save = {
-  --         timeout_ms = 500,
-  --         lsp_fallback = true,
-  --       },
-  --     })
-  --
-  --     vim.api.nvim_create_autocmd("BufWritePre", {
-  --       pattern = "*",
-  --       callback = function(args)
-  --         require("conform").format({ bufnr = args.buf })
-  --       end,
-  --     })
-  --   end,
-  -- },
+	-- {
+	--   "stevearc/conform.nvim",
+	--   lazy = false,
+	--   config = function()
+	--     require("conform").setup({
+	--       formatters_by_ft = {
+	--         go = { "goimports", "gofmt", "gci-format" },
+	--       },
+	--
+	--       format_on_save = {
+	--         timeout_ms = 500,
+	--         lsp_fallback = true,
+	--       },
+	--     })
+	--
+	--     vim.api.nvim_create_autocmd("BufWritePre", {
+	--       pattern = "*",
+	--       callback = function(args)
+	--         require("conform").format({ bufnr = args.buf })
+	--       end,
+	--     })
+	--   end,
+	-- },
 })
