@@ -10,7 +10,6 @@ function CustomLspRename()
 	end)
 end
 
-
 function FormatAndSave()
 	vim.api.nvim_command("silent wall")
 end
@@ -26,7 +25,7 @@ end
 
 vim.g.mapleader = " "
 vim.api.nvim_set_keymap("n", ";", ":", { noremap = true, silent = true, nowait = true })
-vim.api.nvim_set_keymap("n", "<c-p>", ":FzfLua git_files<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<c-p>", ":Telescope git_files<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":Fern . -reveal=%<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap(
 	"n",
@@ -41,12 +40,10 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true, nowait = true }
 )
 vim.keymap.set({ "n" }, "<tab>", function()
-	require("fzf-lua").buffers({
-		previewer = false,
-	})
+	require("telescope.builtin").buffers({})
 end, { silent = true, desc = "Fuzzy complete file" })
 
-vim.api.nvim_set_keymap("n", "<leader>fw", ":FzfLua grep_project<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>fw", ":Telescope grep_project<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>o", ":Startify<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>jj", ":TZAtaraxis<CR>", { noremap = true })
 vim.api.nvim_set_keymap("v", "<leader>y", '"+y', { desc = "copy to system clipboard", nowait = true })
@@ -60,7 +57,7 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>u",
-	"<cmd>FzfLua lsp_references<CR>",
+	"<cmd>Telescope lsp_references<CR>",
 	{ noremap = true, silent = true, nowait = true }
 )
 
