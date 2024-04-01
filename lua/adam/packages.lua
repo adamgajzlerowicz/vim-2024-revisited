@@ -322,6 +322,7 @@ require("lazy").setup({
 				},
 				pickers = {
 					git_files = {
+						sort_lastused = true,
 						show_untracked = true,
 					},
 					buffers = {

@@ -43,7 +43,7 @@ vim.keymap.set({ "n" }, "<tab>", function()
 	require("telescope.builtin").buffers({})
 end, { silent = true, desc = "Fuzzy complete file" })
 
-vim.api.nvim_set_keymap("n", "<leader>fw", ":Telescope grep_project<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>fw", ":Telescope live_grep<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>o", ":Startify<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>jj", ":TZAtaraxis<CR>", { noremap = true })
 vim.api.nvim_set_keymap("v", "<leader>y", '"+y', { desc = "copy to system clipboard", nowait = true })
