@@ -81,10 +81,10 @@ require("formatter").setup({
 	filetype = formatterConfig,
 })
 
--- local format_augroup = vim.api.nvim_create_augroup("FormatAutogroup", { clear = true })
---
--- vim.api.nvim_create_autocmd("BufWritePost", {
--- 	group = format_augroup,
--- 	pattern = "*",
--- 	command = "silent FormatWrite",
--- })
+local format_augroup = vim.api.nvim_create_augroup("FormatAutogroup", { clear = true })
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+	group = format_augroup,
+	pattern = "*",
+	command = "silent FormatWrite",
+})

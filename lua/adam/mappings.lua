@@ -12,7 +12,6 @@ end
 
 
 function FormatAndSave()
-	vim.api.nvim_exec("silent FormatWrite", false)
 	vim.api.nvim_command("silent wall")
 end
 

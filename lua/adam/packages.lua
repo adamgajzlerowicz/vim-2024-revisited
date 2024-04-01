@@ -265,27 +265,11 @@ require("lazy").setup({
 		end,
 	},
 
-	-- {
-	--   "stevearc/conform.nvim",
-	--   lazy = false,
-	--   config = function()
-	--     require("conform").setup({
-	--       formatters_by_ft = {
-	--         go = { "goimports", "gofmt", "gci-format" },
-	--       },
-	--
-	--       format_on_save = {
-	--         timeout_ms = 500,
-	--         lsp_fallback = true,
-	--       },
-	--     })
-	--
-	--     vim.api.nvim_create_autocmd("BufWritePre", {
-	--       pattern = "*",
-	--       callback = function(args)
-	--         require("conform").format({ bufnr = args.buf })
-	--       end,
-	--     })
-	--   end,
-	-- },
+	{
+		"junegunn/fzf",
+	},
+
+	{
+		"junegunn/fzf.vim",
+	},
 })
