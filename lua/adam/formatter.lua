@@ -47,13 +47,13 @@ local formatterConfig = {
 	typescriptreact = { eslint_d, prettier },
 	astro = { prettier },
 	go = {
-		-- function()
-		-- 	return {
-		-- 		exe = "~/gci-format",
-		-- 		args = { vim.api.nvim_buf_get_name(0) },
-		-- 		stdin = false,
-		-- 	}
-		-- end,
+		function()
+			return {
+				exe = "~/gci-format",
+				args = { vim.api.nvim_buf_get_name(0) },
+				stdin = false,
+			}
+		end,
 
 		function()
 			return {
@@ -81,10 +81,10 @@ require("formatter").setup({
 	filetype = formatterConfig,
 })
 
-local format_augroup = vim.api.nvim_create_augroup("FormatAutogroup", { clear = true })
-
-vim.api.nvim_create_autocmd("BufWritePost", {
-	group = format_augroup,
-	pattern = "*",
-	command = "silent FormatWrite",
-})
+-- local format_augroup = vim.api.nvim_create_augroup("FormatAutogroup", { clear = true })
+--
+-- vim.api.nvim_create_autocmd("BufWritePost", {
+-- 	group = format_augroup,
+-- 	pattern = "*",
+-- 	command = "silent FormatWrite",
+-- })
