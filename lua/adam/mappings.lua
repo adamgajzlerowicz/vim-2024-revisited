@@ -57,7 +57,7 @@ vim.api.nvim_set_keymap("v", "<leader>y", '"+y', { desc = "copy to system clipbo
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>p",
-	"<cmd>lua Git_auto_push()<CR><cr>",
+	"<cmd>lua Git_auto_push()<cr>",
 	{ noremap = true, silent = true, nowait = true }
 )
 
@@ -122,7 +122,7 @@ end)
 vim.keymap.set("n", "<leader>gl", function()
 	require("dap-go").debug_last()
 end)
-vim.api.nvim_set_keymap("n", "f", "<cmd>HopChar2<CR>", { noremap = true, silent = true, nowait = true })
+vim.api.nvim_set_keymap("n", "f", "<cmd>HopChar1<CR>", { noremap = true, silent = true, nowait = true })
 vim.api.nvim_set_keymap("n", "<leader>kg", "<cmd>.GBrowse<CR>", { noremap = true, silent = true, nowait = true })
 vim.api.nvim_set_keymap("n", "y", "yy", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>y", '"+yy', { nowait = true, silent = true })
