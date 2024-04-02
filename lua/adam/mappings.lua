@@ -40,7 +40,7 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true, nowait = true }
 )
 vim.keymap.set({ "n" }, "<tab>", function()
-	require("telescope.builtin").buffers({})
+	require("telescope.builtin").buffers({ sort_mru = true })
 end, { silent = true, desc = "Fuzzy complete file" })
 
 vim.api.nvim_set_keymap("n", "<leader>fw", ":Telescope live_grep<CR>", { noremap = true })
