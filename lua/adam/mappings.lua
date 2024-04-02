@@ -1,3 +1,9 @@
+local defaultOptions = {
+	noremap = true,
+	silent = true,
+	nowait = true,
+}
+
 function CustomLspRename()
 	local opts = {
 		prompt = "New Name: ",
@@ -43,7 +49,8 @@ vim.keymap.set({ "n" }, "<tab>", function()
 	require("telescope.builtin").buffers({ sort_mru = true })
 end, { silent = true, desc = "Fuzzy complete file" })
 
-vim.api.nvim_set_keymap("n", "<leader>fw", ":Telescope live_grep<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>fw", ":Telescope live_grep<CR>", defaultOptions)
+vim.api.nvim_set_keymap("v", "<leader>fw", "y<ESC>:Telescope live_grep default_text=<c-r>0<CR>", defaultOptions)
 vim.api.nvim_set_keymap("n", "<leader>o", ":Startify<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>jj", ":TZAtaraxis<CR>", { noremap = true })
 vim.api.nvim_set_keymap("v", "<leader>y", '"+y', { desc = "copy to system clipboard", nowait = true })
