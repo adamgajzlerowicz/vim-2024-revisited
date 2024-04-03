@@ -103,13 +103,16 @@ vim.keymap.set(
 	{ noremap = true, silent = true, desc = "LSP Diagnostics Quickfix" }
 )
 vim.api.nvim_set_keymap("n", "<leader>kc", "<cmd>Gitsigns preview_hunk<CR>", { noremap = true, silent = true })
+
 vim.keymap.set("n", "tb", function()
 	require("dap").toggle_breakpoint()
 end)
+
 vim.keymap.set("n", "tc", function()
 	require("dap").continue()
 end)
-vim.keymap.set("n", "<leader>gu", function()
+
+vim.keymap.set("n", "<leader>tu", function()
 	local widgets = require("dap.ui.widgets")
 	local sidebar = widgets.sidebar(widgets.scopes)
 	sidebar.toggle()

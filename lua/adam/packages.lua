@@ -128,14 +128,6 @@ require("lazy").setup({
 	},
 
 	{
-		"mfussenegger/nvim-dap",
-		dependencies = { "leoluz/nvim-dap-go" },
-		config = function()
-			require("dap-go").setup()
-		end,
-	},
-
-	{
 		"olexsmir/gopher.nvim",
 		config = function()
 			require("gopher").setup()
@@ -338,13 +330,16 @@ require("lazy").setup({
 	},
 
 	{
-		"rcarriga/nvim-dap-ui",
+		"mfussenegger/nvim-dap",
 		dependencies = {
-			"mfussenegger/nvim-dap",
-			"nvim-neotest/nvim-nio",
+			"rcarriga/nvim-dap-ui",
+			"leoluz/nvim-dap-go",
 		},
 		config = function()
 			local dap, dapui = require("dap"), require("dapui")
+			dapui.setup()
+
+			require("dap-go").setup()
 
 			dap.listeners.before.attach.dapui_config = function()
 				dapui.open()
