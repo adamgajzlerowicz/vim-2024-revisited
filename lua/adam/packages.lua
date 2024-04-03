@@ -323,6 +323,7 @@ require("lazy").setup({
 			})
 
 			require("telescope").load_extension("recent_files")
+			require("telescope").load_extension("dir")
 
 			local lsp_symbols_excluding_types = require("adam.telescope-custom-picker")
 			vim.api.nvim_create_user_command("LspSymbolsExcludingTypes", lsp_symbols_excluding_types, {})
@@ -353,6 +354,18 @@ require("lazy").setup({
 			dap.listeners.before.event_exited.dapui_config = function()
 				dapui.close()
 			end
+		end,
+	},
+
+	{
+		"princejoogie/dir-telescope.nvim",
+		config = function()
+			require("dir-telescope").setup({
+				-- these are the default options set
+				hidden = true,
+				no_ignore = false,
+				show_preview = true,
+			})
 		end,
 	},
 })
