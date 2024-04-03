@@ -1,3 +1,5 @@
+local util = require("formatter.util")
+
 local filetypes = {
 	"css",
 	"eruby",
@@ -11,25 +13,26 @@ local filetypes = {
 }
 
 local eslint_d = function()
-	local filename = vim.api.nvim_buf_get_name(0)
-	filename = filename:gsub("%[", "\\["):gsub("%]", "\\]")
-
 	return {
 		exe = "eslint_d",
 		try_node_modules = true,
-		args = { "--stdin", "--stdin-filename", filename, "--fix-to-stdout" },
+		cwd = util.get_current_buffer_file_dir(),
+		args = {
+			"--stdin",
+			"--stdin-filename",
+			util.escape_path(util.get_current_buffer_file_path()),
+			"--fix-to-stdout",
+		},
 		stdin = true,
 	}
 end
 
 local prettier = function()
-	local filepath_original = vim.api.nvim_buf_get_name(0)
-	local filepath = filepath_original:gsub("%[", "\\["):gsub("%]", "\\]")
-
 	return {
 		exe = "prettier",
 		try_node_modules = true,
-		args = { "--stdin-filepath", filepath },
+		args = { "--stdin-filepath", util.escape_path(util.get_current_buffer_file_path()) },
+		cwd = util.get_current_buffer_file_dir(),
 		stdin = true,
 	}
 end

@@ -259,9 +259,22 @@ require("lazy").setup({
 	},
 
 	{
+		"princejoogie/dir-telescope.nvim",
+		config = function()
+			require("dir-telescope").setup({
+				-- these are the default options set
+				hidden = true,
+				no_ignore = false,
+				show_preview = true,
+			})
+		end,
+	},
+
+	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
 			"smartpde/telescope-recent-files",
+			"princejoogie/dir-telescope.nvim",
 		},
 		config = function()
 			require("telescope").setup({
@@ -354,18 +367,6 @@ require("lazy").setup({
 			dap.listeners.before.event_exited.dapui_config = function()
 				dapui.close()
 			end
-		end,
-	},
-
-	{
-		"princejoogie/dir-telescope.nvim",
-		config = function()
-			require("dir-telescope").setup({
-				-- these are the default options set
-				hidden = true,
-				no_ignore = false,
-				show_preview = true,
-			})
 		end,
 	},
 })
