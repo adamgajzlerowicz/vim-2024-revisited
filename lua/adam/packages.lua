@@ -260,6 +260,7 @@ require("lazy").setup({
 
 	{
 		"princejoogie/dir-telescope.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim" },
 		config = function()
 			require("dir-telescope").setup({
 				-- these are the default options set
@@ -274,7 +275,6 @@ require("lazy").setup({
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
 			"smartpde/telescope-recent-files",
-			"princejoogie/dir-telescope.nvim",
 		},
 		config = function()
 			require("telescope").setup({
