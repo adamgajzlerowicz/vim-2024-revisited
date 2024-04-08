@@ -200,10 +200,6 @@ require("lazy").setup({
 		},
 	},
 
-	{
-		"Exafunction/codeium.vim",
-		event = "BufEnter",
-	},
 
 	{
 		"lambdalisue/fern.vim",
