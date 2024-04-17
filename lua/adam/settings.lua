@@ -25,6 +25,8 @@ vim.cmd([[
   syntax enable
   set autowriteall
   set background=dark
+  set undofile
+  set undodir=~/.vim/undo
 ]])
 
 vim.opt.autoread = true
@@ -88,3 +90,4 @@ vim.api.nvim_create_user_command("GoGenerate", function()
 end, {})
 
 vim.opt.numberwidth = 10
+
