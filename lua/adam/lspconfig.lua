@@ -51,3 +51,13 @@ require("lspconfig").golangci_lint_ls.setup({
 	capabilities = capabilities,
 	filetypes = { "go" },
 })
+
+
+
+
+local lspconfig = require("lspconfig")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+require("lspconfig").tsserver.setup({
+	capabilities = capabilities,
+})
+
