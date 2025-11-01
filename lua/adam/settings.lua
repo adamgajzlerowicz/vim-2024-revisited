@@ -73,11 +73,6 @@ vim.cmd([[
   augroup END
 ]])
 
-vim.cmd([[
-  colorscheme zenbones
-
-]])
-
 vim.diagnostic.config({
 	underline = true,
 	virtual_text = true,

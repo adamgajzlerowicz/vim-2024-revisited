@@ -19,12 +19,10 @@ require("lazy").setup({
   {
     'mcchrish/zenbones.nvim',
     name = 'randombones', -- Recommended to use the name property for colorschemes
+    dependencies = { 'rktjmp/lush.nvim' }, -- Required dependency for zenbones
     lazy = false, -- Load immediately when Neovim starts
     priority = 1000, -- Ensure it loads before other plugins
   },
-
-
-
 
 	"mhinz/vim-startify",
 
