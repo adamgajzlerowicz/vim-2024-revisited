@@ -56,11 +56,10 @@ require("lazy").setup({
 
 	{
 		"williamboman/mason.nvim",
+		cmd = "MasonInstallAll",
 	},
 
-	{
-		"williamboman/mason-lspconfig.nvim",
-	},
+	
 
 	{
 		"neovim/nvim-lspconfig",
@@ -127,12 +126,7 @@ require("lazy").setup({
 		end,
 	},
 
-	{
-		"olexsmir/gopher.nvim",
-		config = function()
-			require("gopher").setup()
-		end,
-	},
+	
 
 	{
 		"sainnhe/gruvbox-material",
