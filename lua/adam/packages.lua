@@ -16,6 +16,16 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{ "rose-pine/neovim", name = "rose-pine" },
 
+  {
+    'mcchrish/zenbones.nvim',
+    name = 'randombones', -- Recommended to use the name property for colorschemes
+    lazy = false, -- Load immediately when Neovim starts
+    priority = 1000, -- Ensure it loads before other plugins
+  },
+
+
+
+
 	"mhinz/vim-startify",
 
 	{ "nvim-lua/plenary.nvim" },

@@ -74,8 +74,8 @@ vim.cmd([[
 ]])
 
 vim.cmd([[
-  let g:everforest_background = 'hard'
-  colorscheme kanagawa
+  colorscheme zenbones
+
 ]])
 
 vim.diagnostic.config({
