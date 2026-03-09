@@ -5,7 +5,6 @@ local servers = {
   astro = {},
   tailwindcss = {},
   jsonls = {},
-  eslint = {},
   lua_ls = {
     settings = {
       Lua = {

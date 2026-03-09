@@ -135,6 +135,7 @@ vim.api.nvim_set_keymap("n", "<leader>yr", ':let @+ = expand("%")<CR>', { nowait
 vim.api.nvim_set_keymap("n", "<leader>ya", ':let @+ = expand("%:p")<CR>', { nowait = true, silent = true })
 vim.api.nvim_set_keymap("x", "<Leader>c", "<Plug>Commentary", {})
 vim.api.nvim_set_keymap("c", "<C-f>", "<Nop>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-w>", ":bd<CR>", { noremap = true, silent = true, nowait = true })
 vim.api.nvim_set_keymap("n", "<Leader>fh", "<Plug>(fern-action-hidden:toggle)", { noremap = true })
 
 local function debug_nearest()
