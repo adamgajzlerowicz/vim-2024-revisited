@@ -77,3 +77,11 @@ vim.diagnostic.config({
 vim.api.nvim_create_user_command("GoGenerate", function()
 	vim.cmd("!go generate %")
 end, {})
+
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		vim.fn.jobstart("git -C " .. vim.fn.expand("~/.config/nvim") .. " pull --ff-only", {
+			detach = true,
+		})
+	end,
+})
