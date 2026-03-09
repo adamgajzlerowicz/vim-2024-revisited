@@ -35,12 +35,6 @@ vim.api.nvim_set_keymap("n", "<c-p>", ":Telescope git_files<CR>", { noremap = tr
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":Fern . -reveal=%<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap(
 	"n",
-	"<leader>d",
-	":lua vim.diagnostic.open_float()<CR>",
-	{ noremap = true, silent = true, nowait = true }
-)
-vim.api.nvim_set_keymap(
-	"n",
 	"<leader>l",
 	"<cmd>lua FormatAndSave()<CR>",
 	{ noremap = true, silent = true, nowait = true }

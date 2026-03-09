@@ -30,7 +30,6 @@ require("lazy").setup({
 
 	{
 		"Pocco81/TrueZen.nvim",
-		lazy = false,
 		cmd = { "TZAtaraxis", "TZMinimalist" },
 		config = function()
 			require("true-zen").setup({
@@ -75,7 +74,7 @@ require("lazy").setup({
 
 	{
 		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
+		build = ":TSUpdate",
 	},
 
 	{
@@ -87,7 +86,7 @@ require("lazy").setup({
 
 	{
 		"L3MON4D3/LuaSnip",
-		run = "make install_jsregexp",
+		build = "make install_jsregexp",
 		lazy = false,
 	},
 
@@ -102,10 +101,6 @@ require("lazy").setup({
 
 	{
 		"hrsh7th/cmp-nvim-lsp",
-	},
-
-	{
-		"gpanders/editorconfig.nvim",
 	},
 
 	{
@@ -221,39 +216,12 @@ require("lazy").setup({
 
 	{
 		"windwp/nvim-ts-autotag",
-		setup = function()
+		config = function()
 			require("nvim-ts-autotag").setup()
 		end,
 	},
 	{
 		"onsails/lspkind.nvim",
-	},
-
-	{
-		"ibhagwan/fzf-lua",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = function()
-			require("fzf-lua").setup({
-				-- "borderless_full",
-				"max-perf",
-				previewer = false,
-				winopts = {
-					fullscreen = false,
-					preview = {
-						layout = "vertical",
-						vertical = "down:75%",
-					},
-				},
-			})
-		end,
-	},
-
-	{
-		"junegunn/fzf",
-	},
-
-	{
-		"junegunn/fzf.vim",
 	},
 
 	{

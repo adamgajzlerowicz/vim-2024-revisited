@@ -54,8 +54,13 @@ local lsp_symbols_excluding_types = function(opts)
 					actions.select_default:replace(function()
 						local selection = action_state.get_selected_entry()
 						actions.close(prompt_bufnr)
-						-- Here, you can define what happens when you select an entry
-						-- For example, navigating to the symbol's location
+						if selection then
+							local uri = selection.value.location.uri
+							local path = vim.uri_to_fname(uri)
+							local range = selection.value.location.range
+							vim.cmd("edit " .. vim.fn.fnameescape(path))
+							vim.api.nvim_win_set_cursor(0, { range.start.line + 1, range.start.character })
+						end
 					end)
 					return true
 				end,
