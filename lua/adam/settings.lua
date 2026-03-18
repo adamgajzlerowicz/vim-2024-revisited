@@ -18,6 +18,7 @@ vim.opt.cursorline = true
 vim.opt.wrap = false
 vim.opt.autowriteall = true
 vim.opt.background = "dark"
+vim.cmd("colorscheme nordic")
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand("~/.vim/undo")
 vim.opt.autoread = true
