@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd("FocusLost", {
 	command = "silent! wa",
 })
 
-vim.api.nvim_create_autocmd("CursorHold", {
+vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI", "FocusGained", "BufEnter" }, {
 	pattern = "*",
 	command = "checktime",
 })

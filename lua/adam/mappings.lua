@@ -75,6 +75,8 @@ vim.api.nvim_set_keymap(
 	"<cmd>lua package.loaded.gitsigns.blame_line()<CR>",
 	{ noremap = true, silent = true, nowait = true }
 )
+vim.api.nvim_set_keymap("n", "n", "nzz", defaultOptions)
+vim.api.nvim_set_keymap("n", "N", "Nzz", defaultOptions)
 vim.api.nvim_set_keymap("n", "<Esc>", "<cmd>noh | cclose<CR>", { noremap = true, silent = true, nowait = true })
 vim.api.nvim_set_keymap("n", "gd", ":Telescope lsp_definitions<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "fs", ":Telescope lsp_document_symbols<CR>", { noremap = true, silent = true })
