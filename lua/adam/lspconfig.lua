@@ -15,9 +15,19 @@ local servers = {
     },
   },
   ts_ls = {
-    preferences = {
-      importModuleSpecifierPreference = "relative",
-      importModuleSpecifierEnding = "minimal",
+    settings = {
+      typescript = {
+        preferences = {
+          importModuleSpecifierPreference = "relative",
+          importModuleSpecifierEnding = "minimal",
+        },
+      },
+      javascript = {
+        preferences = {
+          importModuleSpecifierPreference = "relative",
+          importModuleSpecifierEnding = "minimal",
+        },
+      },
     },
   },
 }
